@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9896F960259FE63000253B83 /* HypedListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896F95F259FE63000253B83 /* HypedListApp.swift */; };
-		9896F962259FE63000253B83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896F961259FE63000253B83 /* ContentView.swift */; };
+		9896F962259FE63000253B83 /* HypedListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896F961259FE63000253B83 /* HypedListTabView.swift */; };
 		9896F964259FE63100253B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9896F963259FE63100253B83 /* Assets.xcassets */; };
 		9896F967259FE63100253B83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9896F966259FE63100253B83 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		9896F95C259FE63000253B83 /* HypedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9896F95F259FE63000253B83 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
-		9896F961259FE63000253B83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9896F961259FE63000253B83 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
 		9896F963259FE63100253B83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9896F966259FE63100253B83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9896F968259FE63100253B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				9896F95F259FE63000253B83 /* HypedListApp.swift */,
-				9896F961259FE63000253B83 /* ContentView.swift */,
+				9896F961259FE63000253B83 /* HypedListTabView.swift */,
 				9896F963259FE63100253B83 /* Assets.xcassets */,
 				9896F968259FE63100253B83 /* Info.plist */,
 				9896F965259FE63100253B83 /* Preview Content */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9896F962259FE63000253B83 /* ContentView.swift in Sources */,
+				9896F962259FE63000253B83 /* HypedListTabView.swift in Sources */,
 				9896F960259FE63000253B83 /* HypedListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

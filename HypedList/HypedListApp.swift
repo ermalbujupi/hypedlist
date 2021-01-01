@@ -11,7 +11,7 @@ import SwiftUI
 struct HypedListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HypedListTabView()
         }
     }
 }
