@@ -12,6 +12,8 @@
 		9896F964259FE63100253B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9896F963259FE63100253B83 /* Assets.xcassets */; };
 		9896F967259FE63100253B83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9896F966259FE63100253B83 /* Preview Assets.xcassets */; };
 		98B631FD259FE95A007EE3B1 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B631FC259FE95A007EE3B1 /* UpcomingView.swift */; };
+		98B6320025A07E18007EE3B1 /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B631FF25A07E18007EE3B1 /* CreateHypedEventView.swift */; };
+		98B6320425A07E91007EE3B1 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6320325A07E91007EE3B1 /* HypedEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9896F966259FE63100253B83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9896F968259FE63100253B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B631FC259FE95A007EE3B1 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
+		98B631FF25A07E18007EE3B1 /* CreateHypedEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
+		98B6320325A07E91007EE3B1 /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				9896F95F259FE63000253B83 /* HypedListApp.swift */,
 				9896F961259FE63000253B83 /* HypedListTabView.swift */,
 				98B631FC259FE95A007EE3B1 /* UpcomingView.swift */,
+				98B631FF25A07E18007EE3B1 /* CreateHypedEventView.swift */,
+				98B6320325A07E91007EE3B1 /* HypedEvent.swift */,
 				9896F963259FE63100253B83 /* Assets.xcassets */,
 				9896F968259FE63100253B83 /* Info.plist */,
 				9896F965259FE63100253B83 /* Preview Content */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B6320025A07E18007EE3B1 /* CreateHypedEventView.swift in Sources */,
+				98B6320425A07E91007EE3B1 /* HypedEvent.swift in Sources */,
 				9896F962259FE63000253B83 /* HypedListTabView.swift in Sources */,
 				9896F960259FE63000253B83 /* HypedListApp.swift in Sources */,
 				98B631FD259FE95A007EE3B1 /* UpcomingView.swift in Sources */,
