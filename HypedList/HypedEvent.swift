@@ -13,5 +13,12 @@ class HypedEvent: ObservableObject {
     var title = ""
     var url = ""
     var color = Color.purple
-    var imageData: Data?
+    @Published var imageData: Data?
+    
+    func image() -> Image? {
+        if let data = imageData, let image = UIImage(data: data) {
+            return Image(uiImage: image)
+        }
+        return nil
+    }
 }

@@ -31,15 +31,43 @@ struct CreateHypedEventView: View {
             }
             
             Section {
-                Button(action: {
-                    showImagePicker = true
-                }) {
-                    Text("Pick image")
-                }.sheet(isPresented: $showImagePicker, content: {
-                    ImagePicker()
-                })
+                if hypedEvent.image() == nil {
+                    HStack {
+                        FormLabelView(title: "Image", iconName: "camera", backgroundColor: .purple)
+                        Spacer()
+                        Button(action: {
+                            showImagePicker = true
+                        }) {
+                            Text("Pick image")
+                        }.sheet(isPresented: $showImagePicker, content: {
+                            ImagePicker(imageData: $hypedEvent.imageData)
+                        })
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                } else {
+                    HStack {
+                        FormLabelView(title: "Image", iconName: "camera", backgroundColor: .purple)
+                        Spacer()
+                        Button(action: {
+                            hypedEvent.imageData = nil
+                        }) {
+                            Text("Remove image")
+                                .foregroundColor(.red)
+                        }
+                    }
+                    Button(action: {
+                        showImagePicker = true
+                    }) {
+                        hypedEvent.image()!
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }.sheet(isPresented: $showImagePicker, content: {
+                        ImagePicker(imageData: $hypedEvent.imageData)
+                    })
+                    .buttonStyle(BorderlessButtonStyle())
+                }
             }
-            
+        
             Section {
                 ColorPicker(selection: $hypedEvent.color) {
                     FormLabelView(title: "Color Picker", iconName: "eyedropper", backgroundColor: .yellow)
