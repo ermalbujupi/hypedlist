@@ -14,6 +14,7 @@
 		98B631FD259FE95A007EE3B1 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B631FC259FE95A007EE3B1 /* UpcomingView.swift */; };
 		98B6320025A07E18007EE3B1 /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B631FF25A07E18007EE3B1 /* CreateHypedEventView.swift */; };
 		98B6320425A07E91007EE3B1 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6320325A07E91007EE3B1 /* HypedEvent.swift */; };
+		98B6320925A09EF4007EE3B1 /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6320825A09EF4007EE3B1 /* FormLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 				9896F961259FE63000253B83 /* HypedListTabView.swift */,
 				98B631FC259FE95A007EE3B1 /* UpcomingView.swift */,
 				98B631FF25A07E18007EE3B1 /* CreateHypedEventView.swift */,
+				98B6320825A09EF4007EE3B1 /* FormLabelView.swift */,
 				98B6320325A07E91007EE3B1 /* HypedEvent.swift */,
 				9896F963259FE63100253B83 /* Assets.xcassets */,
 				9896F968259FE63100253B83 /* Info.plist */,
@@ -147,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B6320925A09EF4007EE3B1 /* FormLabelView.swift in Sources */,
 				98B6320025A07E18007EE3B1 /* CreateHypedEventView.swift in Sources */,
 				98B6320425A07E91007EE3B1 /* HypedEvent.swift in Sources */,
 				9896F962259FE63000253B83 /* HypedListTabView.swift in Sources */,
