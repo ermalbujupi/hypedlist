@@ -13,13 +13,18 @@ struct UpcomingView: View {
     var hypedEvents: [HypedEvent] = []
     
     var body: some View {
-        VStack {
-            if hypedEvents.count == 0 {
-                Text("Nothing to look forward to 😥 \n  Create an event or check out the discover tab!")
-                    .bold()
-                    .multilineTextAlignment(.center)
-            } else {
-                
+        ScrollView {
+            VStack {
+                if hypedEvents.count == 0 {
+                    Text("Nothing to look forward to 😥 \n  Create an event or check out the discover tab!")
+                        .bold()
+                        .multilineTextAlignment(.center)
+                } else {
+                    ForEach(hypedEvents) { hypedEvent in
+                        Text(hypedEvent.title)
+                        Circle().foregroundColor(hypedEvent.color)
+                    }
+                }
             }
         }
         .navigationTitle("Upcoming")

@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-class HypedEvent: ObservableObject {
+class HypedEvent: ObservableObject, Identifiable{
+    var id = UUID().uuidString
     var date = Date()
     var title = ""
     var url = ""
