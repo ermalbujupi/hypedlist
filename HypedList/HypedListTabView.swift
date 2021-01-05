@@ -22,7 +22,9 @@ struct HypedListTabView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Discover")
                 }
-            Text("Hello 3")
+            NavigationView {
+                PastView()
+            }
                 .tabItem {
                     Image(systemName: "gobackward")
                     Text("Past")
