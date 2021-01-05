@@ -13,19 +13,7 @@ struct UpcomingView: View {
     @ObservedObject var data = DataController.shared
     
     var body: some View {
-        ScrollView {
-            VStack {
-                if data.hypedEvents.count == 0 {
-                    Text("Nothing to look forward to 😥 \n  Create an event or check out the discover tab!")
-                        .bold()
-                        .multilineTextAlignment(.center)
-                } else {
-                    ForEach(data.hypedEvents) { hypedEvent in
-                        HypedEventTileView(hypedEvent: hypedEvent)
-                    }
-                }
-            }
-        }
+        HypedEventListView(hypedEvents: data.upcomingHypedEvents, noEventsText: "Nothing to look forward to 😥 \n  Create an event or check out the discover tab!")
         .navigationTitle("Upcoming")
         .navigationBarItems(trailing:
                                 Button(action: {
@@ -43,8 +31,6 @@ struct UpcomingView: View {
 
 struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-//            UpcomingView()
-        }
+        UpcomingView()
     }
 }
