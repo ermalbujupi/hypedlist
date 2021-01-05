@@ -89,6 +89,7 @@ struct CreateHypedEventView: View {
                 Text("Cancel")
             }), trailing: Button(action: {
                 DataController.shared.hypedEvents.append(hypedEvent)
+                DataController.shared.saveData()
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("Done")
