@@ -11,7 +11,7 @@ struct HypedListTabView: View {
     var body: some View {
         TabView {
             NavigationView {
-                UpcomingView()
+                UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
             }
                 .tabItem {
                     Image(systemName: "calendar")

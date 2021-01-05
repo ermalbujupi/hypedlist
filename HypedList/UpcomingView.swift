@@ -21,8 +21,7 @@ struct UpcomingView: View {
                         .multilineTextAlignment(.center)
                 } else {
                     ForEach(hypedEvents) { hypedEvent in
-                        Text(hypedEvent.title)
-                        Circle().foregroundColor(hypedEvent.color)
+                        HypedEventTileView(hypedEvent: hypedEvent)
                     }
                 }
             }
@@ -46,7 +45,6 @@ struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             UpcomingView(hypedEvents: [testHypedEvent1, testHypedEvent2])
-            UpcomingView()
         }
     }
 }
