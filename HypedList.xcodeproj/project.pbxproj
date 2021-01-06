@@ -31,7 +31,7 @@
 		9852C1E725A3821E00B59C61 /* HypedEventTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventTileView.swift; sourceTree = "<group>"; };
 		986391A325A4956400605FB7 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		987EECD625A4AB4A00E0A96C /* HypedEventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEventListView.swift; sourceTree = "<group>"; };
-		9896F95C259FE63000253B83 /* HypedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9896F95C259FE63000253B83 /* HypedListiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedListiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9896F95F259FE63000253B83 /* HypedListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListApp.swift; sourceTree = "<group>"; };
 		9896F961259FE63000253B83 /* HypedListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedListTabView.swift; sourceTree = "<group>"; };
 		9896F963259FE63100253B83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		9896F95D259FE63000253B83 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9896F95C259FE63000253B83 /* HypedList.app */,
+				9896F95C259FE63000253B83 /* HypedListiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,9 +125,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9896F95B259FE63000253B83 /* HypedList */ = {
+		9896F95B259FE63000253B83 /* HypedListiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9896F96B259FE63100253B83 /* Build configuration list for PBXNativeTarget "HypedList" */;
+			buildConfigurationList = 9896F96B259FE63100253B83 /* Build configuration list for PBXNativeTarget "HypedListiOS" */;
 			buildPhases = (
 				9896F958259FE63000253B83 /* Sources */,
 				9896F959259FE63000253B83 /* Frameworks */,
@@ -137,13 +137,13 @@
 			);
 			dependencies = (
 			);
-			name = HypedList;
+			name = HypedListiOS;
 			packageProductDependencies = (
 				98BC3AD225A389AA007157CD /* SwiftDate */,
 				987EECD325A49BB300E0A96C /* UIColor_Hex_Swift */,
 			);
 			productName = HypedList;
-			productReference = 9896F95C259FE63000253B83 /* HypedList.app */;
+			productReference = 9896F95C259FE63000253B83 /* HypedListiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9896F95B259FE63000253B83 /* HypedList */,
+				9896F95B259FE63000253B83 /* HypedListiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9896F96B259FE63100253B83 /* Build configuration list for PBXNativeTarget "HypedList" */ = {
+		9896F96B259FE63100253B83 /* Build configuration list for PBXNativeTarget "HypedListiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9896F96C259FE63100253B83 /* Debug */,
