@@ -40,6 +40,15 @@ class DataController: ObservableObject {
         }
     }
     
+    func deleteHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+            hypedEvents.remove(at: index)
+        }
+        saveData()
+    }
+    
     func loadData() {
         DispatchQueue.global().async {
             if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
