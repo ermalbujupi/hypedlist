@@ -33,9 +33,11 @@ class DataController: ObservableObject {
     
     func saveData() {
         DispatchQueue.global().async {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(self.hypedEvents) {
-                UserDefaults.standard.setValue(encoded, forKey: "hypedEvents")
+            if let defaults = UserDefaults(suiteName: "group.ermalbujupaj.HypedList") {
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(self.hypedEvents) {
+                    defaults.setValue(encoded, forKey: "hypedEvents")
+                }
             }
         }
     }
@@ -62,19 +64,32 @@ class DataController: ObservableObject {
     
     func loadData() {
         DispatchQueue.global().async {
-            if let data = UserDefaults.standard.data(forKey: "hypedEvents") {
-                let decoder = JSONDecoder()
-                if let jsonHypedEvents = try? decoder.decode([HypedEvent].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.hypedEvents = jsonHypedEvents
+            if let defaults = UserDefaults(suiteName: "group.ermalbujupaj.HypedList") {
+                if let data = defaults.data(forKey: "hypedEvents") {
+                    let decoder = JSONDecoder()
+                    if let jsonHypedEvents = try? decoder.decode([HypedEvent].self, from: data) {
+                        DispatchQueue.main.async {
+                            self.hypedEvents = jsonHypedEvents
+                        }
                     }
                 }
             }
         }
     }
     
+    func getUpcomingForWidget() -> [HypedEvent] {
+        if let defaults = UserDefaults(suiteName: "group.ermalbujupaj.HypedList") {
+            if let data = defaults.data(forKey: "hypedEvents") {
+                let decoder = JSONDecoder()
+                if let jsonHypedEvents = try? decoder.decode([HypedEvent].self, from: data) {
+                    return jsonHypedEvents
+                }
+            }
+        }
+        return []
+    }
+    
     func getDiscoverEvents() {
-//        https://api.jsonbin.io/b/5ff47cad14be54706019f926/latest
         if let url = URL(string: "https://api.jsonbin.io/b/5ff47cad14be54706019f926/latest") {
             let request = URLRequest(url: url)
             URLSession.shared.dataTask(with: request) { (data, response, error) in
