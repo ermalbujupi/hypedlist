@@ -87,12 +87,14 @@ struct CreateHypedEventView: View {
                  presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("Cancel")
+                    .font(.title2)
             }), trailing: Button(action: {
-                DataController.shared.hypedEvents.append(hypedEvent)
-                DataController.shared.saveData()
+                DataController.shared.saveHypedEvent(hypedEvent: hypedEvent)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("Done")
+                    .font(.title2)
+                    .bold()
             }))
             .navigationTitle("Create")
         }

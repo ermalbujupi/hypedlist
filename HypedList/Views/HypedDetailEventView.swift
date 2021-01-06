@@ -10,6 +10,7 @@ import SwiftUI
 struct HypedDetailEventView: View {
     
     @ObservedObject var hypedEvent: HypedEvent
+    @State var showingCreateView = false
     var isDiscover = false
     
     var body: some View {
@@ -52,8 +53,13 @@ struct HypedDetailEventView: View {
                 .disabled(hypedEvent.hasBeenAdded)
                 .opacity(hypedEvent.hasBeenAdded ? 0.5 : 1.0)
             } else {
-                Button(action: {}) {
+                Button(action: {
+                    showingCreateView = true
+                }) {
                     HypedEventDetailViewButton(backgroundColor: .green, imageName: "pencil.circle", text: "Edit")
+                }
+                .sheet(isPresented: $showingCreateView) {
+                    CreateHypedEventView(hypedEvent: hypedEvent)
                 }
         
                 Button(action: {

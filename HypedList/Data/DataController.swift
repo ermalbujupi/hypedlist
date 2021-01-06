@@ -40,6 +40,17 @@ class DataController: ObservableObject {
         }
     }
     
+    func saveHypedEvent(hypedEvent: HypedEvent) {
+        if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool in
+            return hypedEvent.id == loopingHypedEvent.id
+        }) {
+            hypedEvents[index] = hypedEvent
+        } else {
+            hypedEvents.append(hypedEvent)
+        }
+        saveData()
+    }
+    
     func deleteHypedEvent(hypedEvent: HypedEvent) {
         if let index = hypedEvents.firstIndex(where: { loopingHypedEvent -> Bool in
             return hypedEvent.id == loopingHypedEvent.id
