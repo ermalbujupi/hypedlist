@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HypedEventTileView: View {
     
-    var hypedEvent: HypedEvent
+    @ObservedObject var hypedEvent: HypedEvent
     
     var body: some View {
         VStack(spacing: 0) {
