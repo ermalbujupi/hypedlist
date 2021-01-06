@@ -51,6 +51,16 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
     
     init() {}
     
+    var hasBeenAdded: Bool {
+        let hypedEvent = DataController.shared.hypedEvents.first { (hypedEvent) -> Bool in
+            return hypedEvent.id == self.id
+        }
+        if hypedEvent != nil {
+            return true
+        }
+        return false
+    }
+    
     func image() -> Image? {
         if let data = imageData, let image = UIImage(data: data) {
             return Image(uiImage: image)
@@ -71,6 +81,10 @@ class HypedEvent: ObservableObject, Identifiable, Codable {
     
     func timeFromNow() -> String {
         return date.toRelative()
+    }
+    
+    func validURL() -> URL? {
+        return URL(string: url)
     }
 }
 

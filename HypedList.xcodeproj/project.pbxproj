@@ -23,6 +23,7 @@
 		98B6320925A09EF4007EE3B1 /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6320825A09EF4007EE3B1 /* FormLabelView.swift */; };
 		98BC3AD325A389AA007157CD /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 98BC3AD225A389AA007157CD /* SwiftDate */; };
 		98CEBE2325A4AD1000411CAE /* PastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CEBE2225A4AD1000411CAE /* PastView.swift */; };
+		98D496B125A510B70045DC53 /* HypedDetailEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D496B025A510B70045DC53 /* HypedDetailEventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		98B6320325A07E91007EE3B1 /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
 		98B6320825A09EF4007EE3B1 /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
 		98CEBE2225A4AD1000411CAE /* PastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastView.swift; sourceTree = "<group>"; };
+		98D496B025A510B70045DC53 /* HypedDetailEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedDetailEventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				9852C1E725A3821E00B59C61 /* HypedEventTileView.swift */,
 				98B6320825A09EF4007EE3B1 /* FormLabelView.swift */,
 				9832957725A0CCCB00B25487 /* ImagePicker.swift */,
+				98D496B025A510B70045DC53 /* HypedDetailEventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				9896F962259FE63000253B83 /* HypedListTabView.swift in Sources */,
 				9896F960259FE63000253B83 /* HypedListApp.swift in Sources */,
 				987EECD725A4AB4A00E0A96C /* HypedEventListView.swift in Sources */,
+				98D496B125A510B70045DC53 /* HypedDetailEventView.swift in Sources */,
 				98B631FD259FE95A007EE3B1 /* UpcomingView.swift in Sources */,
 				98B2017D25A4BE4B00091C1F /* DiscoverView.swift in Sources */,
 			);
