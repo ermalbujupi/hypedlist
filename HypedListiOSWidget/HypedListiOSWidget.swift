@@ -9,59 +9,140 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> HypedEventEntry {
+        
+        let placeholderHypedEvent = HypedEvent()
+        placeholderHypedEvent.color = .green
+        placeholderHypedEvent.title = "Loading..."
+        
+        return HypedEventEntry(date: Date(), hypedEvent: placeholderHypedEvent)
     }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    
+    func getSnapshot(in context: Context, completion: @escaping (HypedEventEntry) -> ()) {
+        let entry = HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1)
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
+        var entries: [HypedEventEntry] = []
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
+            let entry = HypedEventEntry(date: entryDate, hypedEvent: testHypedEvent1)
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct HypedEventEntry: TimelineEntry {
     let date: Date
+    let hypedEvent: HypedEvent?
 }
 
 struct HypedListiOSWidgetEntryView : View {
+    
+    @Environment(\.widgetFamily) var widgetFamily
     var entry: Provider.Entry
-
+    
     var body: some View {
-        Text(entry.date, style: .time)
+        
+        GeometryReader { geometry in
+            
+            if let hypedEvent = entry.hypedEvent {
+                ZStack {
+                    if let image = entry.hypedEvent?.image() {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    } else {
+                        hypedEvent.color
+                    }
+                    
+                    Color.black
+                        .opacity(0.15)
+                    
+                    Text(hypedEvent.title)
+                        .foregroundColor(.white)
+                        .font(fontSize())
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Text(hypedEvent.timeFromNow())
+                                .bold()
+                                .padding(10)
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
+            } else {
+                Text("No upcoming events. Tap me to add something!")
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .font(fontSize())
+            }
+        }
+    }
+    
+    func fontSize() -> Font {
+        switch widgetFamily {
+        case .systemSmall:
+            return .body
+        case .systemMedium:
+            return .title
+        case .systemLarge:
+            return .largeTitle
+        @unknown default:
+            return .largeTitle
+        }
     }
 }
 
 @main
 struct HypedListiOSWidget: Widget {
     let kind: String = "HypedListiOSWidget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             HypedListiOSWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .description("See your upcoming events.")
     }
 }
 
 struct HypedListiOSWidget_Previews: PreviewProvider {
     static var previews: some View {
-        HypedListiOSWidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent1))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: testHypedEvent2))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            HypedListiOSWidgetEntryView(entry: HypedEventEntry(date: Date(), hypedEvent: nil))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+        }
     }
 }
